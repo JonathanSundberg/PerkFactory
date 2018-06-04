@@ -1,0 +1,197 @@
+﻿<Window x:Class="PerkFactory.AttributeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PerkFactory"
+        mc:Ignorable="d"
+        Title="Attribute Window" Background="Gray" Height="720" Width="1280">
+    <Grid>
+        <ListBox x:Name="ChoseAttributeListBox" HorizontalAlignment="Left" Height="620" Margin="34,33,0,0" VerticalAlignment="Top" Width="340" SelectionChanged="ChoseAttributeListBox_SelectionChanged"/>
+        <Label Content="Chose attributes" HorizontalAlignment="Center" Height="31" Margin="34,2,898,0" VerticalAlignment="Top" Width="340" HorizontalContentAlignment="Center"/>
+        <Button x:Name="ConfirmAttributeBtn" Content="Confirm Attribute" HorizontalAlignment="Left" Height="70" Margin="395,582,0,0" VerticalAlignment="Top" Width="140" Click="ConfirmAttributeBtn_Click"/>
+        <Button x:Name="AttributeCancelBtn" Content="Cancel" HorizontalAlignment="Left" Height="70" Margin="1100,583,0,0" VerticalAlignment="Top" Width="140" Click="AttributeCancelBtn_Click"/>
+
+        <Grid x:Name="Lifesteal" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Lifesteal %" HorizontalAlignment="Left" Height="27" Margin="34,24,0,0" VerticalAlignment="Top" Width="70"/>
+            <Slider x:Name="LifeStealSlider" HorizontalAlignment="Left" Height="20" Margin="34,56,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="LifeStealSlider_ValueChanged"/>
+            <TextBox x:Name="LifeStealTxtBox" Tag="Lifesteal %" HorizontalAlignment="Left" Height="20" Margin="199,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="TextBox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+        </Grid>
+
+        <Grid x:Name="Resistance" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Physical Resistance %" HorizontalAlignment="Left" Height="27" Margin="34,24,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Physical_resistanceSlider" HorizontalAlignment="Left" Height="20" Margin="34,56,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Physical_resistance_ValueChanged"/>
+            <TextBox x:Name="PhysicalResistanceTxtBox" Tag="Physical resistance %" HorizontalAlignment="Left" Height="20" Margin="199,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="PhysicalResistanceTxtBox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Water Resistance %" HorizontalAlignment="Left" Height="27" Margin="413,30,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Water_resistanceSlider" HorizontalAlignment="Left" Height="20" Margin="413,62,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Water_resistanceSlider_ValueChanged"/>
+            <TextBox x:Name="WaterResistanceTxtBox" Tag="Water resistance %" HorizontalAlignment="Left" Height="20" Margin="578,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="WaterResistanceTxtBox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Fire Resistance %" HorizontalAlignment="Left" Height="27" Margin="34,146,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Fire_resistanceSlider" HorizontalAlignment="Left" Height="20" Margin="34,178,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Fire_resistanceSlider_ValueChanged"/>
+            <TextBox x:Name="FireResistanceTxtBox" Tag="Fire resistance %" HorizontalAlignment="Left" Height="20" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="FireResistanceTxtBox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Nature Resistance %" HorizontalAlignment="Left" Height="27" Margin="413,146,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Nature_resistanceSlider" HorizontalAlignment="Left" Height="20" Margin="413,178,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Nature_resistanceSlider_ValueChanged"/>
+            <TextBox x:Name="NatureResistanceTxtBox" Tag="Nature resistance %" HorizontalAlignment="Left" Height="20" Margin="578,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="NatureResistanceTxtBox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Magic Resistance %" HorizontalAlignment="Left" Height="26" Margin="34,250,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Magic_Resistance_Slider" HorizontalAlignment="Left" Height="20" Margin="34,282,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Magic_Resistance_Slider_ValueChanged"/>
+            <TextBox x:Name="Magic_Resistance_Txtbox" Tag="Magic Resistance" HorizontalAlignment="Left" Height="20" Margin="199,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Magic_Resistance_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Ranged Resistance %" HorizontalAlignment="Left" Height="26" Margin="413,250,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Ranged_Resistance_Slider" HorizontalAlignment="Left" Height="20" Margin="413,282,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Ranged_Resistance_Slider_ValueChanged"/>
+            <TextBox x:Name="Ranged_Resistance_Txtbox" Tag="Ranged Resistance" HorizontalAlignment="Left" Height="20" Margin="578,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Ranged_Resistance_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+        </Grid>
+
+        <Grid x:Name="Stats" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Strength Flat" HorizontalAlignment="Left" Height="37" Margin="34,24,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="StrFlat" Tag="Strength flat" HorizontalAlignment="Left" Height="20" Margin="73,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="4" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Agillity Flat" HorizontalAlignment="Left" Height="27" Margin="413,24,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="AgiFlat" Tag="Agillity flat" HorizontalAlignment="Left" Height="20" Margin="445,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="4" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Intelligence Flat" HorizontalAlignment="Left" Height="27" Margin="34,141,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="IntFlat" Tag="Intelligence flat" HorizontalAlignment="Left" Height="20" Margin="73,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="4" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Health Flat" HorizontalAlignment="Left" Height="27" Margin="413,141,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="HpFlat" Tag="Health flat" HorizontalAlignment="Left" Height="20" Margin="445,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="4" MinLines="1" RenderTransformOrigin="0.558,0.475" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Strength % increase" HorizontalAlignment="Left" Height="27" Margin="34,250,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="StrMlp" Tag="Strength %" HorizontalAlignment="Left" Height="20" Margin="73,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="4" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput"/>
+            <Label Content="Agillity % increase" HorizontalAlignment="Left" Height="27" Margin="413,250,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="AgiMlp" Tag="Agility %" HorizontalAlignment="Left" Height="20" Margin="444,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="4" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput"/>
+            <Label Content="Intelligence % increase" HorizontalAlignment="Left" Height="27" Margin="34,385,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="IntMlp" Tag="Intelligence %" HorizontalAlignment="Left" Height="20" Margin="73,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="4" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput"/>
+            <Label Content="Health % increase" HorizontalAlignment="Left" Height="27" Margin="413,385,0,0" VerticalAlignment="Top" Width="153"/>
+            <TextBox x:Name="HpMlp" Tag="Health %" HorizontalAlignment="Left" Height="20" Margin="445,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="4" MinLines="1" RenderTransformOrigin="0.558,0.475" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+        </Grid>
+
+        <Grid x:Name="Damage" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Damage % increase" HorizontalAlignment="Left" Height="26" Margin="46,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Dmg_Slider" HorizontalAlignment="Left" Height="20" Margin="46,30,0,0" VerticalAlignment="Top" Width="154" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Dmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Dmg_Txtbox" Tag="Damage %" HorizontalAlignment="Left" Height="20" Margin="212,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Text="0" MaxLength="3" MinLines="1" TextChanged="Dmg_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Melee range % increase" HorizontalAlignment="Left" Height="26" Margin="422,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Melee_Range_Slider" HorizontalAlignment="Left" Height="20" Margin="422,30,0,0" VerticalAlignment="Top" Width="152" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Melee_Range_Slider_ValueChanged"/>
+            <TextBox x:Name="Melee_Range_Txtbox" Tag="Melee range %" HorizontalAlignment="Left" Height="20" Margin="586,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="3" MinLines="1" TextChanged="Melee_Range_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Melee damage % increase" HorizontalAlignment="Left" Height="26" Margin="46,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Melee_Dmg_Slider" HorizontalAlignment="Left" Height="20" Margin="46,108,0,0" VerticalAlignment="Top" Width="154" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Melee_Dmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Melee_Dmg_Txtbox" Tag="Melee damage %" HorizontalAlignment="Left" Height="20" Margin="212,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Text="0" MaxLength="3" MinLines="1" TextChanged="Melee_Dmg_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content=" range damage % increase" HorizontalAlignment="Left" Height="26" Margin="422,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Range_Dmg_Slider" HorizontalAlignment="Left" Height="20" Margin="422,108,0,0" VerticalAlignment="Top" Width="152" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Range_Dmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Range_Dmg_Txtbox" Tag="Range damage %" HorizontalAlignment="Left" Height="20" Margin="586,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="3" MinLines="1" TextChanged="Range_Dmg_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Attack speed % increase" HorizontalAlignment="Left" Height="26" Margin="46,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="AtkSpd_Slider" HorizontalAlignment="Left" Height="20" Margin="46,198,0,0" VerticalAlignment="Top" Width="154" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="AtkSpd_Slider_ValueChanged"/>
+            <TextBox x:Name="AtkSpd_Txtbox" Tag="Attack speed %" HorizontalAlignment="Left" Height="20" Margin="212,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Text="0" MaxLength="3" MinLines="1" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" TextChanged="AtkSpd_Txtbox_TextChanged" />
+            <Label Content="Melee attack speed % increase" HorizontalAlignment="Left" Height="26" Margin="422,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Melee_AtkSpd_Slider" HorizontalAlignment="Left" Height="20" Margin="422,198,0,0" VerticalAlignment="Top" Width="152" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Melee_AtkSpd_Slider_ValueChanged"/>
+            <TextBox x:Name="Melee_AtkSpd_Txtbox" Tag="Melee attack speed %" HorizontalAlignment="Left" Height="20" Margin="586,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="3" MinLines="1" TextChanged="Melee_AtkSpd_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Consecutive Dmg % incr from hits" HorizontalAlignment="Left" Height="26" Margin="46,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Cons_Dmg_Slider" HorizontalAlignment="Left" Height="20" Margin="46,284,0,0" VerticalAlignment="Top" Width="154" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Cons_Dmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Cons_Dmg_Txtbox" Tag="Consecutive Dmg % from hits" HorizontalAlignment="Left" Height="20" Margin="212,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Text="0" MaxLength="3" MinLines="1" TextChanged="Cons_Dmg_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content=" Consecutive Atk Spd % inc from hits" HorizontalAlignment="Left" Height="26" Margin="422,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Cons_AtkSpd_Slider" HorizontalAlignment="Left" Height="20" Margin="422,284,0,0" VerticalAlignment="Top" Width="152" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Cons_AtkSpd_Slider_ValueChanged"/>
+            <TextBox x:Name="Cons_AtkSpd_Txtbox" Tag="Consecutive attack speed % from hits" HorizontalAlignment="Left" Height="20" Margin="586,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="3" MinLines="1" TextChanged="Cons_AtkSpd_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Cons Melee Dmg % incr from hits" HorizontalAlignment="Left" Height="26" Margin="46,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Cons_MeleeDmg_Slider" HorizontalAlignment="Left" Height="20" Margin="46,374,0,0" VerticalAlignment="Top" Width="154" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Cons_MeleeDmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Cons_MeleeDmg_Txtbox" Tag="Consecutive melee dmg % from hits" HorizontalAlignment="Left" Height="20" Margin="212,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Text="0" MaxLength="3" MinLines="1" TextChanged="Cons_MeleeDmg_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="cons Range dmg % incr from hits" HorizontalAlignment="Left" Height="26" Margin="422,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Cons_RangeDmg_Slider" HorizontalAlignment="Left" Height="20" Margin="422,374,0,0" VerticalAlignment="Top" Width="152" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Cons_RangeDmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Cons_RangeDmg_Txtbox" Tag="Consecutive range dmg % from hits" HorizontalAlignment="Left" Height="20" Margin="586,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="3" MinLines="1" TextChanged="Cons_RangeDmg_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Cons Melee atk spd % incr from hits" HorizontalAlignment="Left" Height="26" Margin="46,424,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Cons_MeleeAtkSpd_Slider" HorizontalAlignment="Left" Height="20" Margin="46,456,0,0" VerticalAlignment="Top" Width="154" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Cons_MeleeAtkSpd_Slider_ValueChanged"/>
+            <TextBox x:Name="Cons_Melee_AtkSpd_Txtbox" Tag="Consecutive melee attack speed % from hits" HorizontalAlignment="Left" Height="20" Margin="212,456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Text="0" MaxLength="3" MinLines="1" TextChanged="Cons_Melee_AtkSpd_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="cons Range atk spd % incr from hits" HorizontalAlignment="Left" Height="26" Margin="422,424,0,0" VerticalAlignment="Top" Width="208"/>
+            <Slider x:Name="Cons_Range_AtkSpd_Slider" HorizontalAlignment="Left" Height="20" Margin="422,456,0,0" VerticalAlignment="Top" Width="152" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Cons_Range_AtkSpd_Slider_ValueChanged"/>
+            <TextBox x:Name="Cons_Range_AtkSpd_Txtbox" Tag="Consecutive range attack speed % from hits" HorizontalAlignment="Left" Height="20" Margin="586,456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" MaxLength="3" MinLines="1" TextChanged="Cons_Range_AtkSpd_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+        </Grid>
+        <Grid x:Name="Immunity" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Heal Immunity" HorizontalAlignment="Left" Height="26" Margin="46,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Physical Immunity" HorizontalAlignment="Left" Height="26" Margin="422,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Water Immunity" HorizontalAlignment="Left" Height="26" Margin="46,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Fire Immunity" HorizontalAlignment="Left" Height="26" Margin="422,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Nature Immunity" HorizontalAlignment="Left" Height="26" Margin="46,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Slow Immunity" HorizontalAlignment="Left" Height="26" Margin="422,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Stun Immunity" HorizontalAlignment="Left" Height="26" Margin="46,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Knockback Immunity" HorizontalAlignment="Left" Height="26" Margin="46,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Magic Immunity" HorizontalAlignment="Left" Height="26" Margin="422,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="PlaceHolder" HorizontalAlignment="Left" Height="26" Margin="422,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="PlaceHolder" HorizontalAlignment="Left" Height="26" Margin="46,424,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="PlaceHolder" HorizontalAlignment="Left" Height="26" Margin="422,424,0,0" VerticalAlignment="Top" Width="208"/>
+            <CheckBox x:Name="Heal_Immunity_Box" Tag="Heal immune" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,25,0,0" VerticalAlignment="Top" Height="19"/>
+            <CheckBox x:Name="Physical_Immunity_Box" Tag="Physical immune" Content="" HorizontalAlignment="Left" Margin="430,29,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Water_Immunity_Box" Tag="Water immune" Content="" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Fire_Immunity_Box" Tag="Fire immune" Content="" HorizontalAlignment="Left" Margin="430,107,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Nature_Immunity_Box" Tag="Nature immune" Content="" HorizontalAlignment="Left" Margin="50,197,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Slow_Immunity_Box" Tag="Slow immune" Content="" HorizontalAlignment="Left" Margin="430,197,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Stun_Immunity_Box" Tag="Stun immune" Content="" HorizontalAlignment="Left" Margin="50,283,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Magic_Immunity_Box" Tag="Magic immune" Content="" HorizontalAlignment="Left" Margin="430,283,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Knockback_Immunity_Box" Tag="Knockback immune" Content="" HorizontalAlignment="Left" Margin="50,373,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="Conditions" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Physical Damage Receive" HorizontalAlignment="Left" Height="26" Margin="46,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Water Damage Receive" HorizontalAlignment="Left" Height="26" Margin="422,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Nature Damage Receive" HorizontalAlignment="Left" Height="26" Margin="46,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Magic Damage Receive" HorizontalAlignment="Left" Height="26" Margin="422,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Fire Damage Receive" HorizontalAlignment="Left" Height="26" Margin="46,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Physical Damage Dealt" HorizontalAlignment="Left" Height="26" Margin="422,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Water Damage Dealt" HorizontalAlignment="Left" Height="26" Margin="46,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Magic Damage Dealt" HorizontalAlignment="Left" Height="26" Margin="46,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Nature Damage Dealt" HorizontalAlignment="Left" Height="26" Margin="422,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Fire Damage Dealt" HorizontalAlignment="Left" Height="26" Margin="422,342,0,0" VerticalAlignment="Top" Width="208"/>
+
+            <CheckBox x:Name="Physical_Taken" Tag="Physical Taken" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,25,0,0" VerticalAlignment="Top" Height="19" Checked="Physical_Taken_Checked" Unchecked="Physical_Taken_Unchecked" />
+            <CheckBox x:Name="Water_Taken" Tag="Water Taken" Content="" HorizontalAlignment="Left" Margin="430,29,0,0" VerticalAlignment="Top" Checked="Water_Taken_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Nature_Taken" Tag="Nature Taken" Content="" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top" Checked="Nature_Taken_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Magic_Taken" Tag="Magic Taken" Content="" HorizontalAlignment="Left" Margin="430,107,0,0" VerticalAlignment="Top" Checked="Magic_Taken_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Fire_Taken" Tag="Fire Taken" Content="" HorizontalAlignment="Left" Margin="50,197,0,0" VerticalAlignment="Top" Checked="Fire_Taken_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Physical_Given" Tag="Physical Given" Content="" HorizontalAlignment="Left" Margin="430,197,0,0" VerticalAlignment="Top" Checked="Physical_Given_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Water_Given" Tag="Water Given" Content="" HorizontalAlignment="Left" Margin="50,283,0,0" VerticalAlignment="Top" Checked="Water_Given_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Nature_Given" Tag="Nature Given" Content="" HorizontalAlignment="Left" Margin="430,283,0,0" VerticalAlignment="Top" Checked="Nature_Given_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Magic_Given" Tag="Magic Given" Content="" HorizontalAlignment="Left" Margin="50,373,0,0" VerticalAlignment="Top" Checked="Magic_Given_Checked" Unchecked="Physical_Taken_Unchecked"/>
+            <CheckBox x:Name="Fire_Given" Tag="Fire Given" Content="" HorizontalAlignment="Left" Margin="430,373,0,0" VerticalAlignment="Top" Checked="Fire_Given_Checked" Unchecked="Physical_Taken_Unchecked"/>
+
+
+        </Grid>
+
+        <Grid x:Name="Disallow_Weapon" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" d:IsHidden="True">
+            <Label Content="Disallow Melee" HorizontalAlignment="Left" Height="26" Margin="46,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Disallow Range" HorizontalAlignment="Left" Height="26" Margin="422,-2,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Disallow Magic" HorizontalAlignment="Left" Height="26" Margin="46,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Disallow Water" HorizontalAlignment="Left" Height="26" Margin="422,76,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Disallow Fire" HorizontalAlignment="Left" Height="26" Margin="46,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Disallow Nature" HorizontalAlignment="Left" Height="26" Margin="422,166,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Placeholder" HorizontalAlignment="Left" Height="26" Margin="46,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Placeholder" HorizontalAlignment="Left" Height="26" Margin="46,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="Placeholder" HorizontalAlignment="Left" Height="26" Margin="422,252,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="PlaceHolder" HorizontalAlignment="Left" Height="26" Margin="422,342,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="PlaceHolder" HorizontalAlignment="Left" Height="26" Margin="46,424,0,0" VerticalAlignment="Top" Width="208"/>
+            <Label Content="PlaceHolder" HorizontalAlignment="Left" Height="26" Margin="422,424,0,0" VerticalAlignment="Top" Width="208"/>
+            <CheckBox x:Name="Disallow_Melee" Tag="Disallow melee" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,25,0,0" VerticalAlignment="Top" Height="19"/>
+            <CheckBox x:Name="Disallow_Range" Tag="Disallow Range" Content="" HorizontalAlignment="Left" Margin="430,29,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Disallow_magic" Tag="Disallow magic" Content="" HorizontalAlignment="Left" Margin="50,107,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Disallow_Water" Tag="Disallow water" Content="" HorizontalAlignment="Left" Margin="430,107,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Disallow_Fire" Tag="Disallow fire" Content="" HorizontalAlignment="Left" Margin="50,197,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="Disallow_Nature" Tag="Disallow nature" Content="" HorizontalAlignment="Left" Margin="430,197,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+
+        <Grid x:Name="Skills" HorizontalAlignment="Left" Height="500" Margin="540,33,0,0" VerticalAlignment="Top" Width="700" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" >
+            <Label Content="Number of Skills" HorizontalAlignment="Left" Height="27" Margin="34,24,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Nr_Of_Skills_Slider" HorizontalAlignment="Left" Height="20" Margin="34,56,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Nr_Of_Skills_Slider_ValueChanged"/>
+            <TextBox x:Name="Nr_Of_Skills_Txtbox" Tag="Number of skills" HorizontalAlignment="Left" Height="20" Margin="199,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Nr_Of_Skills_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Skill cooldown" HorizontalAlignment="Left" Height="27" Margin="413,30,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Skill_Cooldown_Slider" HorizontalAlignment="Left" Height="20" Margin="413,62,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Skill_Cooldown_Slider_ValueChanged"/>
+            <TextBox x:Name="Skill_Cooldown_Txtbox" Tag="Skill cooldown %" HorizontalAlignment="Left" Height="20" Margin="578,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Skill_Cooldown_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Skill Damage %" HorizontalAlignment="Left" Height="27" Margin="34,146,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Skill_Dmg_Slider" HorizontalAlignment="Left" Height="20" Margin="34,178,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Skill_Dmg_Slider_ValueChanged"/>
+            <TextBox x:Name="Skill_Dmg_txtbox" Tag="Skill damage %" HorizontalAlignment="Left" Height="20" Margin="199,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Skill_Dmg_txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="MovementSpeed %" HorizontalAlignment="Left" Height="27" Margin="413,146,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Movement_Speed_Slider" HorizontalAlignment="Left" Height="20" Margin="413,178,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Movement_Speed_Slider_ValueChanged"/>
+            <TextBox x:Name="Movement_Speed_txtbox" Tag="Movement speed"  HorizontalAlignment="Left" Height="20" Margin="578,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Movement_Speed_txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="% Max hp Healing" HorizontalAlignment="Left" Height="26" Margin="34,258,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Max_Hp_Healing_Slider" HorizontalAlignment="Left" Height="20" Margin="34,290,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Max_Hp_Healing_Slider_ValueChanged"/>
+            <TextBox x:Name="Max_Hp_Healing_Txtbox" Tag="Max HP % healing"  HorizontalAlignment="Left" Height="20" Margin="199,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Max_Hp_Healing_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Flat Healing" HorizontalAlignment="Left" Height="26" Margin="413,258,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Flat_Healing_Slider" HorizontalAlignment="Left" Height="20" Margin="413,290,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Flat_Healing_Slider_ValueChanged"/>
+            <TextBox x:Name="Flat_Healing_TxtBox" Tag="Flat healing"  HorizontalAlignment="Left" Height="20" Margin="578,290,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Flat_Healing_TxtBox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+            <Label Content="Skill adaptive cooldown" HorizontalAlignment="Left" Height="26" Margin="34,374,0,0" VerticalAlignment="Top" Width="153"/>
+            <Slider x:Name="Skill_Adaptive_Cooldown_Slider" HorizontalAlignment="Left" Height="20" Margin="34,406,0,0" VerticalAlignment="Top" Width="153" Minimum="-999" Maximum="999" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="Skill_Adaptive_Cooldown_Slider_ValueChanged"/>
+            <TextBox x:Name="Skill_Adaptive_Cooldown_Txtbox" Tag="Adaptive Skill Cooldown" HorizontalAlignment="Left" Height="20" Margin="199,406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43" Text="0" MaxLength="3" MinLines="1" TextChanged="Skill_Adaptive_Cooldown_Txtbox_TextChanged" PreviewTextInput="LifeStealTxtBox_PreviewTextInput" />
+        </Grid>
+
+
+    </Grid>
+</Window>
