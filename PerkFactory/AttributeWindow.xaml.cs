@@ -16,6 +16,7 @@ using System.ComponentModel;
 
 namespace PerkFactory
 {
+    // Github commit line
     /// <summary>
     /// Interaction logic for AttributeWindow.xaml
     /// </summary>
